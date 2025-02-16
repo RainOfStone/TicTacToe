@@ -7,9 +7,17 @@
     </head>
     <body>
         <div id="GameBoardContainer">
-            <div id="stats">
-                <div id="P1Stats">name, turn</div>
-                <div id="P2Stats">name, turn</div>
+            <div id="Stats">
+                <div id="P1Stats">
+                    <div id="P1Name">name</div>
+                    <div id="P1Turn">turn</div>
+                    <div id="P1Letter">Letter (x or o)</div>
+                </div>
+                <div id="P2Stats">
+                    <div id="P2Name">name</div>
+                    <div id="P2Turn">turn</div>
+                    <div id="P2Letter">Letter (x or o)</div>
+                </div>
             </div>
             <div id="GameBoard">
                 <div id="GameBtn1">1</div>
@@ -21,8 +29,14 @@
                 <div id="GameBtn7">7</div>
                 <div id="GameBtn8">8</div>
                 <div id="GameBtn9">9</div>
-            </div>
-            <div id="BtnContainer"></div>
+                </div>
+            <div id="BtnContainer">
+                <div id="NamePlayersBtnContainer"><button id="NamePlayersBtn">Add Players</button>
+                </div>
+                <div id="ClearBoardBtnContainer">
+                    <button id="ClearBoardBtn">Clear Board</button>
+                </div>
+                </div>
             </div>
 
         </div>
