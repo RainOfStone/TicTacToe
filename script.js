@@ -10,15 +10,6 @@ const GameBtn7 = document.querySelector('#GameBtn7')
 const GameBtn8 = document.querySelector('#GameBtn8')
 const GameBtn9 = document.querySelector('#GameBtn9')
 
-Gameboard.appendChild(GameBtn1)
-Gameboard.appendChild(GameBtn2)
-Gameboard.appendChild(GameBtn3)
-Gameboard.appendChild(GameBtn4)
-Gameboard.appendChild(GameBtn5)
-Gameboard.appendChild(GameBtn6)
-Gameboard.appendChild(GameBtn7)
-Gameboard.appendChild(GameBtn8)
-Gameboard.appendChild(GameBtn9)
 
 function Test(test) {
     return {test,
@@ -86,22 +77,25 @@ function DisplayStats() {
     P1Letter.textContent = 'X'
     P2Letter.textContent = 'O'
     if (Player1NameInput.value == '' && Player2NameInput.value == '') {
-            P1Name.textContent = `Name: Player1`
-            P2Name.textContent = `Name: Player2`
+        P1Name.textContent = `Name: Player1`
+        P2Name.textContent = `Name: Player2`
+        TurnCreator()
     }
     else if (Player1NameInput.value != '' && Player2NameInput.value == ''){
         P1Name.textContent = `Name: ${Player1NameInput.value}`
         P2Name.textContent = `Name: Player2`
+        TurnCreator()
     }
     else if (Player1NameInput.value == '' && Player2NameInput.value != ''){
         P1Name.textContent = `Name: Player1`
         P2Name.textContent = `Name: ${Player2NameInput.value}`
+        TurnCreator()
     }
     else if (Player1NameInput.value != '' && Player2NameInput.value != ''){
-            P1Name.textContent = `Name: ${Player1NameInput.value}`
-            P2Name.textContent = `Name: ${Player2NameInput.value}`
+        P1Name.textContent = `Name: ${Player1NameInput.value}`
+        P2Name.textContent = `Name: ${Player2NameInput.value}`
+        TurnCreator()
     }
-    //TurnCreator()
 }
 AddPlayer()
 function GameboardButtons(letter) {
@@ -113,48 +107,66 @@ function GameboardButtons(letter) {
                 let target = event.target
                 switch(target.id) {
                     case 'GameBtn1':
-                        GameBoardArray[0] = 'x'
-                        GameBtn1.textContent = 'x'
+                        GameBoardArray[0] = 'X'
+                        GameBtn1.textContent = 'X'
+                        GameBtn1.disabled = true
+                        console.log(GameBoardArray)
                     break
 
                     case 'GameBtn2':
-                        GameBoardArray[1] = 'x'
-                        GameBtn2.textContent = 'x'
+                        GameBoardArray[1] = 'X'
+                        GameBtn2.textContent = 'X'
+                        GameBtn2.disabled = true
+                        console.log(GameBoardArray)
                     break
 
                     case 'GameBtn3':
-                        GameBoardArray[2] = 'x'
-                        GameBtn3.textContent = 'x'
+                        GameBoardArray[2] = 'X'
+                        GameBtn3.textContent = 'X'
+                        GameBtn3.disabled = true
+                        console.log(GameBoardArray)
                     break
 
                     case 'GameBtn4':
-                        GameBoardArray[3] = 'x'
-                        GameBtn4.textContent = 'x'
+                        GameBoardArray[3] = 'X'
+                        GameBtn4.textContent = 'X'
+                        GameBtn4.disabled = true
+                        console.log(GameBoardArray)
                     break
 
                     case 'GameBtn5':
-                        GameBoardArray[4] = 'x'
-                        GameBtn5.textContent = 'x'
+                        GameBoardArray[4] = 'X'
+                        GameBtn5.textContent = 'X'
+                        GameBtn5.disabled = true
+                        console.log(GameBoardArray)
                     break
 
                     case 'GameBtn6':
-                        GameBoardArray[5] = 'x'
-                        GameBtn6.textContent = 'x'
+                        GameBoardArray[5] = 'X'
+                        GameBtn6.textContent = 'X'
+                        GameBtn6.disabled = true
+                        console.log(GameBoardArray)
                     break
 
                     case 'GameBtn7':
-                        GameBoardArray[6] = 'x'
-                        GameBtn7.textContent = 'x'
+                        GameBoardArray[6] = 'X'
+                        GameBtn7.textContent = 'X'
+                        GameBtn7.disabled = true
+                        console.log(GameBoardArray)
                     break
 
                     case 'GameBtn8':
-                        GameBoardArray[7] = 'x'
-                        GameBtn8.textContent = 'x'
+                        GameBoardArray[7] = 'X'
+                        GameBtn8.textContent = 'X'
+                        GameBtn8.disabled = true
+                        console.log(GameBoardArray)
                     break
 
                     case 'GameBtn9':
-                        GameBoardArray[8] = 'x'
-                        GameBtn9.textContent = 'x'
+                        GameBoardArray[8] = 'X'
+                        GameBtn9.textContent = 'X'
+                        GameBtn9.disabled = true
+                        console.log(GameBoardArray)
                     break
                 } 
             })
@@ -169,6 +181,16 @@ function TurnPasser(turn) {
 function TurnCreator() {
     let PlayerTurn = GameboardButtons('x')
     TurnPasser(PlayerTurn)
+    console.log('TurnCreator ran')
+    Gameboard.appendChild(GameBtn1)
+    Gameboard.appendChild(GameBtn2)
+    Gameboard.appendChild(GameBtn3)
+    Gameboard.appendChild(GameBtn4)
+    Gameboard.appendChild(GameBtn5)
+    Gameboard.appendChild(GameBtn6)
+    Gameboard.appendChild(GameBtn7)
+    Gameboard.appendChild(GameBtn8)
+    Gameboard.appendChild(GameBtn9)
 }
 
 
