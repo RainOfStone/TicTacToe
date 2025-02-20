@@ -1,5 +1,25 @@
 const NamePlayersBtnContainer = document.querySelector('#NamePlayersBtnContainer')
-const GameboardContainer = document.querySelector('#GameBoardContainer')
+const Gameboard = document.querySelector('#GameBoard')
+const GameBtn1 = document.querySelector('#GameBtn1')
+const GameBtn2 = document.querySelector('#GameBtn2')
+const GameBtn3 = document.querySelector('#GameBtn3')
+const GameBtn4 = document.querySelector('#GameBtn4')
+const GameBtn5 = document.querySelector('#GameBtn5')
+const GameBtn6 = document.querySelector('#GameBtn6')
+const GameBtn7 = document.querySelector('#GameBtn7')
+const GameBtn8 = document.querySelector('#GameBtn8')
+const GameBtn9 = document.querySelector('#GameBtn9')
+
+Gameboard.appendChild(GameBtn1)
+Gameboard.appendChild(GameBtn2)
+Gameboard.appendChild(GameBtn3)
+Gameboard.appendChild(GameBtn4)
+Gameboard.appendChild(GameBtn5)
+Gameboard.appendChild(GameBtn6)
+Gameboard.appendChild(GameBtn7)
+Gameboard.appendChild(GameBtn8)
+Gameboard.appendChild(GameBtn9)
+
 function Test(test) {
     return {test,
         hello() {
@@ -81,21 +101,81 @@ function DisplayStats() {
             P1Name.textContent = `Name: ${Player1NameInput.value}`
             P2Name.textContent = `Name: ${Player2NameInput.value}`
     }
-    //run function to place X and O
+    //TurnCreator()
 }
-    /*let NamePlayersListener = NamePlayersBtn.addEventListener('click', () => {
-                DialogContainer.setAttribute('style', `display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        flex-direction: column;`)
-                DialogContainer.showModal()
-                NamePlayersBtn.disabled = true
-                if (NamePlayersBtn.disabled == true) {
-                    return {NamePlayersBtn ,DialogContainer, StartBtn,}
-                }
-            })
-        //run function to add player names on board then run function to display turn etc.*/
 AddPlayer()
+function GameboardButtons(letter) {
+    let Turn = letter
+    return {Turn, TurnChecker(){
+        let GameBoardArray = ['', '', '', '', '', '', '', '', '']
+        if (Turn == letter) {
+            Gameboard.addEventListener('click', (event) => {
+                let target = event.target
+                switch(target.id) {
+                    case 'GameBtn1':
+                        GameBoardArray[0] = 'x'
+                        GameBtn1.textContent = 'x'
+                    break
+
+                    case 'GameBtn2':
+                        GameBoardArray[1] = 'x'
+                        GameBtn2.textContent = 'x'
+                    break
+
+                    case 'GameBtn3':
+                        GameBoardArray[2] = 'x'
+                        GameBtn3.textContent = 'x'
+                    break
+
+                    case 'GameBtn4':
+                        GameBoardArray[3] = 'x'
+                        GameBtn4.textContent = 'x'
+                    break
+
+                    case 'GameBtn5':
+                        GameBoardArray[4] = 'x'
+                        GameBtn5.textContent = 'x'
+                    break
+
+                    case 'GameBtn6':
+                        GameBoardArray[5] = 'x'
+                        GameBtn6.textContent = 'x'
+                    break
+
+                    case 'GameBtn7':
+                        GameBoardArray[6] = 'x'
+                        GameBtn7.textContent = 'x'
+                    break
+
+                    case 'GameBtn8':
+                        GameBoardArray[7] = 'x'
+                        GameBtn8.textContent = 'x'
+                    break
+
+                    case 'GameBtn9':
+                        GameBoardArray[8] = 'x'
+                        GameBtn9.textContent = 'x'
+                    break
+                } 
+            })
+        }
+    }}
+}
+
+function TurnPasser(turn) {
+    turn.TurnChecker()
+}
+
+function TurnCreator() {
+    let PlayerTurn = GameboardButtons('x')
+    TurnPasser(PlayerTurn)
+}
+
+
+
+
+
+
 /* for Gameboard buttons:
 const button = document.queryselector('#Button1-9')
 case: 'id':
